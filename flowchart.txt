@@ -1,0 +1,53 @@
+1. Importing the packages
+2. Exploring the dataset 
+	-  Knee Osteoarthritis
+	- Knee Osteoarthritis Detection from Roboflow
+3. Image processing
+	- using ImageDataGenerator 
+		- Re-scaling the Image
+		- Shear Transformation
+		- Zooming the Image
+		- Horizontal Flip 
+		- Reshaping the Image 
+	-  Torchvision based processing for Detection
+4. Building the model 
+
+    Classification
+        CNN
+        DeepCNN
+        InceptionV3
+        DenseNet201 backbone for CenterNet
+             - Voting
+        
+        Xception
+    Detection
+    YoloV5
+    YoloV6
+    YoloV7
+    YoloV8
+
+5. Training the model
+6. Building the model 
+
+
+Flask Framework
+----------------
+ 
+7. Flask Framework with Sqlite for signup and signin
+8. Importing the packages
+9. User Upload an image for analysis
+10. The given input is preprocessed 
+11. The trained model is used for predicting the result
+12. Final Outcome is display 
+
+Dataset
+----------- 
+Classification :  https://www.kaggle.com/datasets/maangelikaferrer/knee-osteoarthritis-dataset 
+Detection : https://roboflow.com/convert/labelbox-json-to-yolov5-pytorch-txt 
+
+Extension
+------------
+In the base paper, the author mentioned to use different models for analysis the Knee Osteoarthriti dataset using DenseNet as back of CenterNet and compared with CNN and DeepCNN model from which proposed model got 99% of accuracy,
+However, we can further enhance the performance by exploring other techniques such Xception and InceptionV3 model for classification which may get 99% of accuracy or above,
+Further we enhance detection method using YoloV5 and YoloV8 for Detecting the knee osteoarthriti
+With the above As an extension we can build the front end using flask framework for user testing with authentication.

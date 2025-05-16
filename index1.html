@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form-2</title>
+
+    <link rel="shortcut icon" href="static/assets/img/favicon.png" type="image/x-icon">
+    <!-- bootstrap stylesheet -->
+    <link rel="stylesheet" href="static/assets/css/customizeBootstrap.css">
+    <!-- css stylesheet -->
+    <link rel="stylesheet" href="static/assets/css/style.css">
+</head>
+
+<body>
+
+    <!-- main body  -->
+
+    <!-- back to top  -->
+    <button class="back-to-top" id="back-to-top"></button>
+
+    <!-- preloader  -->
+    <div id='preloader'>
+        <svg id='loader-1' height='210' width='550' xmlns='http://www.w3.org/2000/svg'
+            xmlns:xlink='http://www.w3.org/1999/xlink'>
+            <path id='loader-2' stroke='#DE6262' fill='none' stroke-width='2' stroke-linejoin='round'
+                d='M0,90L250,90Q257,60 262,87T267,95 270,88 273,92t6,35 7,-60T290,127 297,107s2,-11 10,-10 1,1 8,-10T319,95c6,4 8,-6 10,-17s2,10 9,11h210' />
+        </svg>
+    </div>
+
+
+    <!-- header start  -->
+    <header class="bglc-3">
+        <div class="container position-relative">
+            <div class="d-between py-20">
+                <div class="d-between gap-xl-6 gap-sm-40 gap-20">
+                    <div class="site-title">
+                        <a href="#">
+                            <img class="w-100" src="static/assets/img/logo.png" alt="logo">
+                        </a>
+                    </div>
+                    <nav class="menu-bar">
+                        <ul>
+                            <li class="has-children">
+                                <span class="menu-item tsc-2">Prediction <i class="fa-solid fa-chevron-down nav-arrow"></i></span>
+                                <ul class="sub-menu">
+                                    <li><a href="/index">Classification</a></li>
+                                    <li><a href="/index1">Detection</a></li>
+                                    
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="menu-item" href="/about">About</a>
+                            </li>
+                            <li class="has-children">
+                              <span class="menu-item tsc-2">Notebook <i class="fa-solid fa-chevron-down nav-arrow"></i></span>
+                              <ul class="sub-menu">
+                                  <li><a href="/notebook1">Classification</a></li>
+                                  <li><a href="/notebook2">Detection</a></li>
+                                  
+                              </ul>
+                          </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="d-between gap-sm-20 gap-10">
+                    <div class="cnt-portal">
+                        <a href="/login" class="btn-1 para-1b fw-bold text-capitalize">Signout</a>
+                    </div>
+                    <div class="sm-menu d-block d-lg-none">
+                        <i class="fa-solid fa-bars menu-icon"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header end  -->
+
+    <!-- hero section start  -->
+    <section class="hero bglc-3">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-6 wow fadeInUp" data-wow-duration="2s">
+                    <h5 class="tpc-1 mb-20"><i class="fa-solid fa-heart-pulse me-10"></i> Welcome to Dashboard! </h5>
+                   
+                    <p class="lead-1b mb-sm-40 mb-20">
+                        Knee Osteoarthritis Detection Using an Improved CenterNet With Pixel-Wise Voting Scheme
+                    </p>
+                    
+                </div>
+                <div class="col-lg-5">
+                    <div class="hero-banner">
+                        <img class="w-100" src="static/assets/img/banner/cat-banner-2.png" alt="hero banner">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- hero section end  -->
+
+
+    <!-- Bioelectronics Concept start  -->
+    <section class="bioelectronics-concept sec-pad overflow-hidden">
+        <div class="container">
+            <div class="row align-items-center gy-4">
+                  <h1 class="protect_taital">Form</h1>
+    
+            <form class="form-signin" action="/predict1" method=post enctype=multipart/form-data>
+                <h1 class="h3 mb-3 font-weight-normal">Upload any image</h1>
+                <input type="file" name="file" class="form-control-file" id="inputfile">
+                <br/>
+                <button style="width: 500px;" class="btn btn-lg btn-primary btn-block" type="submit">Upload</button>
+                
+            </form>
+            <script src="//code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            <script src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+            <script src="//stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+            <script type="text/javascript">
+            $('#inputfile').bind('change', function() {
+                let fileSize = this.files[0].size/1024/1024; // this gives in MB
+                if (fileSize > 10) {
+                    $("#inputfile").val(null);
+                    alert('file is too big. images more than 10MB are not allowed')
+                    return
+                }
+
+                let ext = $('#inputfile').val().split('.').pop().toLowerCase();
+                if($.inArray(ext, ['jpg','jpeg','png']) == -1) {
+                    $("#inputfile").val(null);
+                    alert('only jpeg/jpg files are allowed!');
+                }
+            });
+            </script>
+      <br><br><br><br>
+    </div>
+  </div>
+
+</section>
+<!-- Bioelectronics Concept end  -->
+
+
+<!-- footer section start  -->
+<footer class="footer sec-pad-top">
+  <div class="container position-relative">
+      <div class="row justify-content-between gy-4 pb-lg-6 pb-40 bb-1">
+          <div class="col-lg-3 col-md-6 wow fadeInDown">
+              <div class="footer-logo mb-sm-30 mb-3">
+                  <a href="#"> <img src="static/assets/img/logo.png" alt="logo"></a>
+              </div>
+              
+              <ul class="footer-social-icon">
+                  <li><a href="javascript:void(0)"><i class="fa-brands fa-facebook-f"></i></a></li>
+                  <li><a href="javascript:void(0)"><i class="fa-brands fa-instagram"></i></a></li>
+                  <li><a href="javascript:void(0)"><i class="fa-brands fa-twitter"></i></a></li>
+                  <li><a href="javascript:void(0)"><i class="fa-brands fa-dribbble"></i></a></li>
+              </ul>
+          </div>
+          
+      </div>
+      <span class="d-block para-1b tnc-10 py-30 text-center wow fadeInDown">Copyright © <span class="currentYear"></span> <a
+              href="javascript:void(0)" class="tsc-2">HealthEase Medical</a>. All Rights Reserved </span>
+  </div>
+</footer>
+<!-- footer section end  -->
+
+<!-- jquery  -->
+<script src="static/assets/js/plugin/jquery-3.7.0.min.js"></script>
+<!-- bootstrap  -->
+<script src="static/assets/js/plugin/bootstrap.min.js"></script>
+<!-- swiper js  -->
+<script src="static/assets/js/plugin/swiper-bundle.min.js"></script>
+<!-- wow js  -->
+<script src="static/assets/js/plugin/wow.min.js"></script>
+<!-- magnific popup -->
+<script src="static/assets/js/plugin/magnific-popup.js_1.1.0_jquery.js"></script>
+<!-- viewport  -->
+<script src="static/assets/js/plugin/viewport.js"></script>
+<!-- odometer  -->
+<script src="static/assets/js/plugin/odometer.js_0.4.7.min.js"></script>
+<!-- plugin customization  -->
+<script src="static/assets/js/pluginCustomization.js"></script>
+<!-- main js  -->
+<script src="static/assets/js/main.js"></script>
+</body>
+
+</html>
